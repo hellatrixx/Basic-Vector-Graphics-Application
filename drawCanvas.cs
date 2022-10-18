@@ -3,7 +3,7 @@ using System.IO;
 
 namespace New_folder
 {
-    class drawSVG
+    class drawCanvas
     {
         private int width = 400;
         private int height = 400;

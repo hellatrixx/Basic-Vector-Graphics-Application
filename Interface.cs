@@ -4,7 +4,7 @@ namespace New_folder
 {
     class Interface
     {
-        drawSVG draw = new drawSVG();
+        drawCanvas draw = new drawCanvas();
         Circle circle = new Circle();
         Rectangle rectangle = new Rectangle();
         Polygon polygon = new Polygon();
@@ -62,8 +62,10 @@ namespace New_folder
                 }
                 if(userInput == "9")
                 {
+                    Console.WriteLine("Please provide the ID of the shape you want to delete:");
+                    var id = Console.ReadLine();
                     Delete delete = new Delete();
-                    Console.WriteLine(delete.delete(ellipse));
+                    Console.WriteLine(delete.delete(id));
                     userInput = Console.ReadLine();
                 }
                 if(userInput == "10")

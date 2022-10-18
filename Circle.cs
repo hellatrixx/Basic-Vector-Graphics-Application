@@ -4,12 +4,13 @@ using System.Text;
 
 namespace New_folder
 {
-    class Circle
+    class Circle 
     {
         private int x;
         private int y;
         private int radius;
         private string color;
+        public static int id;
         public string drawCircle()
         {
             string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
@@ -21,12 +22,13 @@ namespace New_folder
             y = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the radius of the circle: ");
             radius = Convert.ToInt32(Console.ReadLine());
+            id++;
             
             Console.WriteLine("Enter the color of the circle: ");
             color = Console.ReadLine();
             Console.ReadLine();
             
-            string circle = "<circle cx=\"" + x + "\" cy=\"" + y + "\" r=\"" + radius + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>";
+            string circle = "<circle id=\"" + id + "\" cx=\"" + x + "\" cy=\"" + y + "\" r=\"" + radius + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, circle);
             using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
             sw.Write(sr);

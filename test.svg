@@ -1,2 +1,4 @@
-<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="20" cy="30" rx="20" ry="30" stroke="black" stroke-width="3" fill="yellow"/><ellipse cx="20" cy="30" rx="20" ry="30" stroke="black" stroke-width="3" fill="yellow"/></svg>
+<sg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+
+<circle id="2" cx="30" cy="30" r="30" stroke="black" stroke-width="3" fill="red"/>
+</svg>
