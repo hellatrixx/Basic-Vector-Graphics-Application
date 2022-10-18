@@ -11,7 +11,8 @@ namespace New_folder
         private int x1;
         private int y1;
         private string color;
-        public string drawPolyline()
+        
+        public string drawPolyline(int id)
         {
             string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
@@ -25,11 +26,12 @@ namespace New_folder
             Console.WriteLine("Enter the y coordinate of the second point: ");
             y1 = Convert.ToInt32(Console.ReadLine());
             
+            
             Console.WriteLine("Enter the color of the polyline: ");
             color = Console.ReadLine();
             Console.ReadLine();
             
-            string polyline = "<polyline points=\"" + x + "," + y + " " + x1 + "," + y1 + "\" style=\"fill:none;stroke:" + color + ";stroke-width:3\"/>";
+            string polyline = "<polyline id=\"" + id + "\" points=\"" + x + "," + y + " " + x1 + "," + y1 + "\" style=\"fill:none;stroke:" + color + ";stroke-width:3\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, polyline);
             using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
             sw.Write(sr);

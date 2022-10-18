@@ -12,6 +12,7 @@ namespace New_folder
         Polyline polyline = new Polyline();
         Path path = new Path();
         Line line = new Line();
+        public static int id;
         public Interface()
         {
             Console.WriteLine("              CS264 Assignment 2\n                Stilian Kolev\n============================================");
@@ -23,47 +24,54 @@ namespace New_folder
                 {
                     Console.WriteLine(draw.draw());
                     userInput = Console.ReadLine();
-                    
+    
                 }
                 if(userInput == "2")
-                {
-                    Console.WriteLine(circle.drawCircle());
-                    userInput = Console.ReadLine();
-                }
+                {   
+                    id++;
+                    Console.WriteLine(circle.drawCircle(id));
+                    userInput = Console.ReadLine();             
+                    }
                 if(userInput == "3")
                 {
-                    Console.WriteLine(rectangle.drawRectangle());
+                    id++;
+                    Console.WriteLine(rectangle.drawRectangle(id));
                     userInput = Console.ReadLine();
                 }
                 if(userInput == "4")
                 {
+                    id++;
                     Console.WriteLine(polygon.drawPolygon());
                     userInput = Console.ReadLine();
                 }
                 if(userInput == "5")
                 {
-                    Console.WriteLine(ellipse.drawEllipse());
+                    id++;
+                    Console.WriteLine(ellipse.drawEllipse(id));
                     userInput = Console.ReadLine();
                 } 
                 if(userInput == "6")
                 {
-                    Console.WriteLine(polyline.drawPolyline());
+                    id++;
+                    Console.WriteLine(polyline.drawPolyline(id));
                     userInput = Console.ReadLine();
                 }
                 if(userInput == "7")
                 {
-                    Console.WriteLine(path.drawPath());
+                    id++;
+                    Console.WriteLine(path.drawPath(id));
                     userInput = Console.ReadLine();
                 }
                 if(userInput == "8")
                 {
-                    Console.WriteLine(line.drawLine());
+                    id++;
+                    Console.WriteLine(line.drawLine(id));
                     userInput = Console.ReadLine();
                 }
                 if(userInput == "9")
                 {
                     Console.WriteLine("Please provide the ID of the shape you want to delete:");
-                    var id = Console.ReadLine();
+                    id = int.Parse(Console.ReadLine());
                     Delete delete = new Delete();
                     Console.WriteLine(delete.delete(id));
                     userInput = Console.ReadLine();

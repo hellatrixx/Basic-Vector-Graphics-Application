@@ -26,7 +26,7 @@ namespace New_folder
             {
                 polygon += x[i] + "," + y[i] + " ";
             }
-            polygon += "\" style=\"fill:lime;stroke:purple;stroke-width:1\" />";
+            polygon += "\" style=\"fill:lime;stroke:purple;stroke-width:1\" />"+"\n";
             sr = sr.Insert(sr.Length - 6, polygon);
             using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
             sw.Write(sr);

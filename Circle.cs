@@ -10,8 +10,7 @@ namespace New_folder
         private int y;
         private int radius;
         private string color;
-        public static int id;
-        public string drawCircle()
+        public string drawCircle(int id)
         {
             string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
@@ -22,7 +21,7 @@ namespace New_folder
             y = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the radius of the circle: ");
             radius = Convert.ToInt32(Console.ReadLine());
-            id++;
+            
             
             Console.WriteLine("Enter the color of the circle: ");
             color = Console.ReadLine();

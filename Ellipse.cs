@@ -11,7 +11,8 @@ namespace New_folder
         private int radiusX;
         private int radiusY;
         private string color;
-        public string drawEllipse()
+    
+        public string drawEllipse(int id)
         {
             string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
@@ -25,11 +26,12 @@ namespace New_folder
             Console.WriteLine("Enter the radiusY of the ellipse: ");
             radiusY = Convert.ToInt32(Console.ReadLine());
             
+            
             Console.WriteLine("Enter the color of the ellipse: ");
             color = Console.ReadLine();
             Console.ReadLine();
             
-            string ellipse = "<ellipse cx=\"" + x + "\" cy=\"" + y + "\" rx=\"" + radiusX + "\" ry=\"" + radiusY + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>";
+            string ellipse = "<ellipse id=\"" + id + "\" cx=\"" + x + "\" cy=\"" + y + "\" rx=\"" + radiusX + "\" ry=\"" + radiusY + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, ellipse);
             using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
             sw.Write(sr);
