@@ -14,7 +14,7 @@ namespace New_folder
         
         public string drawRectangle(int id)
         {
-            string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
+            string path = @"C:\Users\stili\VS_projects\C#\New folder\canvas.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
             
             Console.WriteLine("Enter the x coordinate of the rectangle: ");
@@ -33,7 +33,7 @@ namespace New_folder
             
             string rectangle = "<rect id=\"" + id + "\" x=\"" + x + "\" y=\"" + y + "\" width=\"" + width + "\" height=\"" + height + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, rectangle);
-            using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
+            using var sw = File.CreateText(@"C:\Users\stili\VS_projects\C#\New folder\canvas.svg");
             sw.Write(sr);
             return sr;
         }

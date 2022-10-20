@@ -14,7 +14,7 @@ namespace New_folder
         
         public string drawPolyline(int id)
         {
-            string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
+            string path = @"C:\Users\stili\VS_projects\C#\New folder\canvas.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
             
             Console.WriteLine("Enter the x coordinate of the first point: ");
@@ -33,7 +33,7 @@ namespace New_folder
             
             string polyline = "<polyline id=\"" + id + "\" points=\"" + x + "," + y + " " + x1 + "," + y1 + "\" style=\"fill:none;stroke:" + color + ";stroke-width:3\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, polyline);
-            using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
+            using var sw = File.CreateText(@"C:\Users\stili\VS_projects\C#\New folder\canvas.svg");
             sw.Write(sr);
             return sr;
         }

@@ -12,7 +12,7 @@ namespace New_folder
         private string color;
         public string drawCircle(int id)
         {
-            string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
+            string path = @"C:\Users\stili\VS_projects\C#\New folder\canvas.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
             
             Console.WriteLine("Enter the x coordinate of the circle: ");
@@ -29,7 +29,7 @@ namespace New_folder
             
             string circle = "<circle id=\"" + id + "\" cx=\"" + x + "\" cy=\"" + y + "\" r=\"" + radius + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, circle);
-            using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
+            using var sw = File.CreateText(@"C:\Users\stili\VS_projects\C#\New folder\canvas.svg");
             sw.Write(sr);
             return sr;
         }

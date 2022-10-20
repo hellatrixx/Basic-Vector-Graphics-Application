@@ -14,7 +14,7 @@ namespace New_folder
         public static int id;
         public string drawPath(int id)
         {
-            string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
+            string path = @"C:\Users\stili\VS_projects\C#\New folder\canvas.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
             
             Console.WriteLine("Enter the x coordinate of the path: ");
@@ -33,7 +33,7 @@ namespace New_folder
             
             string path1 = "<path id=\"" + id + "\" d=\"M " + x + " " + y + " L " + x1 + " " + y1 + "\" stroke=\"" + color + "\" stroke-width=\"3\" fill=\"none\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, path1);
-            using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
+            using var sw = File.CreateText(@"C:\Users\stili\VS_projects\C#\New folder\canvas.svg");
             sw.Write(sr);
             return sr;
         }

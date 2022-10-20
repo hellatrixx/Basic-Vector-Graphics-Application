@@ -14,7 +14,7 @@ namespace New_folder
     
         public string drawEllipse(int id)
         {
-            string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
+            string path = @"C:\Users\stili\VS_projects\C#\New folder\canvas.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
             
             Console.WriteLine("Enter the x coordinate of the ellipse: ");
@@ -33,7 +33,7 @@ namespace New_folder
             
             string ellipse = "<ellipse id=\"" + id + "\" cx=\"" + x + "\" cy=\"" + y + "\" rx=\"" + radiusX + "\" ry=\"" + radiusY + "\" stroke=\"black\" stroke-width=\"3\" fill=\"" + color + "\"/>"+"\n";
             sr = sr.Insert(sr.Length - 6, ellipse);
-            using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
+            using var sw = File.CreateText(@"C:\Users\stili\VS_projects\C#\New folder\canvas.svg");
             sw.Write(sr);
             return sr;
         }

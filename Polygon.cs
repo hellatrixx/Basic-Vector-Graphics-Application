@@ -8,7 +8,7 @@ namespace New_folder
     {
         public string drawPolygon()
         {
-            string path = @"C:\Users\stili\VS projects\C#\New folder\test.svg";
+            string path = @"C:\Users\stili\VS_projects\C#\New folder\canvas.svg";
             string sr = File.ReadAllText(path , Encoding.UTF8);
             Console.WriteLine("Enter the number of points: ");
             int points = Convert.ToInt32(Console.ReadLine());
@@ -28,7 +28,7 @@ namespace New_folder
             }
             polygon += "\" style=\"fill:lime;stroke:purple;stroke-width:1\" />"+"\n";
             sr = sr.Insert(sr.Length - 6, polygon);
-            using var sw = File.CreateText(@"C:\Users\stili\VS projects\C#\New folder\test.svg");
+            using var sw = File.CreateText(@"C:\Users\stili\VS_projects\C#\New folder\canvas.svg");
             sw.Write(sr);
             return sr;
         }
